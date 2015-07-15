@@ -14,6 +14,9 @@
     "promises",
     "generators"
   ],
+  "contributors": [
+    "Forbes Lindesay (https://github.com/ForbesLindesay)"
+  ],
   "author": "Stéphane Alnet <stephane@shimaore.net> (http://stephane.shimaore.net/)",
   "license": "MIT",
   "bugs": {
