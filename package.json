@@ -1,0 +1,26 @@
+{
+  "name": "seem",
+  "version": "0.0.0",
+  "description": "Promises and Generators",
+  "main": "index.js",
+  "scripts": {
+    "test": "cd test && iojs ./yield.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shimaore/seem.git"
+  },
+  "keywords": [
+    "promises",
+    "generators"
+  ],
+  "author": "Stéphane Alnet <stephane@shimaore.net> (http://stephane.shimaore.net/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shimaore/seem/issues"
+  },
+  "homepage": "https://github.com/shimaore/seem",
+  "devDependencies": {
+    "bluebird": "^2.9.34"
+  }
+}
