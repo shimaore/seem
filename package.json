@@ -4,7 +4,7 @@
   "description": "Promises and Generators",
   "main": "index.js",
   "scripts": {
-    "test": "cd test && iojs ./yield.js"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/shimaore/seem",
   "devDependencies": {
-    "bluebird": "^2.9.34"
+    "bluebird": "^2.9.34",
+    "coffee-script": "^1.10.0",
+    "mocha": "^2.3.2"
   }
 }
