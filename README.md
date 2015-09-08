@@ -11,8 +11,12 @@ var g = seem(function*(n){
   var b = yield Promise.resolve(a+5);
   return b+3;
 });
+```
 
-// g(2).then(function(result){ assert(result === 2+4+5+3); })
+The function will now return a Promise that will resolve to the value of the `return` statement upon success.
+
+```javascript
+g(2).then(function(result){ assert(result === 2+4+5+3); })
 ```
 
 Essentially `yield` turns its Promise argument into that Promise's result.

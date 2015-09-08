@@ -93,3 +93,14 @@ Make sure we can get Promise errors as well.
           m.bar(42).then (v) ->
             check v.r, 3
             done()
+
+      it 'should work with the example from the README', (done) ->
+
+        g = seem (n) ->
+          a = yield Promise.resolve n+4
+          b = yield Promise.resolve a+5
+          b+3
+
+        g(2).then (result) ->
+          check result, 2+4+5+3
+          done()
