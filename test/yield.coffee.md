@@ -104,3 +104,12 @@ Make sure we can get Promise errors as well.
         g(2).then (result) ->
           check result, 2+4+5+3
           done()
+
+      it 'should handle non-Promise values', (done) ->
+        g = seem ->
+          a = yield 5
+          a+2
+
+        g().then (result) ->
+          check result, 7
+          done()
