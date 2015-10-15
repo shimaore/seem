@@ -1,6 +1,8 @@
 Promises and Generators
 =======================
 
+This module allows you to implement ES7's `async/await` pattern using ES6's `yield`.
+
 This is [@ForbesLindesay](https://github.com/ForbesLindesay)'s `async` function from his [Control Flow Utopia](http://pag.forbeslindesay.co.uk/) presentation. I was surprised to find out it apparently hadn't been packaged yet.
 
 ```javascript
