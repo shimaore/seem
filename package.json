@@ -24,9 +24,9 @@
   },
   "homepage": "https://github.com/shimaore/seem",
   "devDependencies": {
-    "bluebird": "^2.9.34",
+    "bluebird": "^3.0.5",
     "coffee-script": "^1.10.0",
-    "mocha": "^2.3.2"
+    "mocha": "^2.3.3"
   },
   "dependencies": {
     "debug": "^2.2.0"
