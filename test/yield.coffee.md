@@ -32,6 +32,35 @@ Since we are stopped `inside` the `yield`, return its value and continue until t
 
     describe 'seem', ->
       seem = require '../index'
+
+      it 'should work with undefined', (done) ->
+        f = seem ->
+          yield undefined
+
+        f().then (x) ->
+          done() if typeof x is 'undefined'
+
+      it 'should work with null', (done) ->
+        f = seem ->
+          yield null
+
+        f().then (x) ->
+          done() if x is null
+
+      it 'should work with numbers', (done) ->
+        f = seem ->
+          yield 4
+
+        f().then (x) ->
+          done() if x is 4
+
+      it 'should work with numbers', (done) ->
+        f = seem ->
+          yield 4
+
+        f().then (x) ->
+          done() if x is 4
+
       it 'should work with readFileAsync', (done) ->
 
         make_generator_2 = (x) ->
