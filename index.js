@@ -4,7 +4,7 @@ function async(makeGenerator){
     function handle(result){ // { done: [Boolean], value: [Object] }
       var value = result.value;
       if (result.done) return value;
-      if('function' !== typeof value.then) {
+      if(typeof value === 'undefined' || value === null || 'function' !== typeof value.then) {
         debug('Expected a Promise',value);
         value = Promise.resolve(value);
       }
