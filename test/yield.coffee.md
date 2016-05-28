@@ -142,3 +142,16 @@ Make sure we can get Promise errors as well.
         g().then (result) ->
           check result, 7
           done()
+
+    describe 'The library', ->
+      seem = require '..'
+      it 'should allow alternate Promise', (done) ->
+        seem.use
+          resolve: (v) ->
+            then: (resolve,reject) ->
+              resolve Promise.resolve v+7
+        g = seem ->
+          yield 4
+        g().then (result) ->
+          check result, 11
+          done()

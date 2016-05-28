@@ -4,6 +4,7 @@
   "description": "Promises and Generators",
   "main": "index.js",
   "scripts": {
+    "pretest": "npm install",
     "test": "mocha"
   },
   "repository": {
@@ -24,11 +25,8 @@
   },
   "homepage": "https://github.com/shimaore/seem",
   "devDependencies": {
-    "bluebird": "^3.3.3",
+    "bluebird": "^3.4.0",
     "coffee-script": "^1.10.0",
-    "mocha": "^2.4.5"
-  },
-  "dependencies": {
-    "debug": "^2.2.0"
+    "mocha": "^2.5.3"
   }
 }

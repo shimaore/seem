@@ -1,3 +1,4 @@
+var __Promise = Promise;
 function async(makeGenerator){
   return function (){
     var generator = makeGenerator.apply(this, arguments);
@@ -5,8 +6,7 @@ function async(makeGenerator){
       var value = result.value;
       if (result.done) return value;
       if(typeof value === 'undefined' || value === null || 'function' !== typeof value.then) {
-        debug('Expected a Promise',value);
-        value = Promise.resolve(value);
+        value = __Promise.resolve(value);
       }
       return value.then(function (res){
         return handle(generator.next(res));
@@ -18,4 +18,4 @@ function async(makeGenerator){
   }
 }
 module.exports = async;
-var debug = require('debug')('seem');
+module.exports.use = function (p) { __Promise = p; }
