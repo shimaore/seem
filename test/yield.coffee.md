@@ -33,6 +33,34 @@ Since we are stopped `inside` the `yield`, return its value and continue until t
     describe 'seem', ->
       seem = require '../index'
 
+      it 'should work without yield', (done) ->
+        f = seem ->
+          if false
+            yield 4
+
+        f().then (x) ->
+          done() if typeof x is 'undefined'
+
+      it 'should work with return undefined', (done) ->
+        f = seem ->
+          if false
+            yield 4
+          else
+            return
+
+        f().then (x) ->
+          done() if typeof x is 'undefined'
+
+      it 'should work with return', (done) ->
+        f = seem ->
+          if false
+            yield 4
+          else
+            return 5
+
+        f().then (x) ->
+          done() if x is 5
+
       it 'should work with undefined', (done) ->
         f = seem ->
           yield undefined

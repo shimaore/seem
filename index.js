@@ -4,10 +4,10 @@ function async(makeGenerator){
     var generator = makeGenerator.apply(this, arguments);
     function handle(result){ // { done: [Boolean], value: [Object] }
       var value = result.value;
-      if (result.done) return value;
       if(typeof value === 'undefined' || value === null || 'function' !== typeof value.then) {
         value = __Promise.resolve(value);
       }
+      if (result.done) return value;
       return value.then(function (res){
         return handle(generator.next(res));
       }, function (err){
