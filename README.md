@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/shimaore/seem.svg?branch=master)](https://travis-ci.org/shimaore/seem)
+
 seem: Promises and Generators for async/await
 =============================================
 
