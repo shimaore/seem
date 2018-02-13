@@ -171,6 +171,32 @@ Make sure we can get Promise errors as well.
           check result, 7
           done()
 
+      it 'should work with multiple return statements', (done) ->
+        g = seem ->
+          a = yield 5
+          b = yield 2
+          return a+b
+          return 8
+
+        g().then (result) ->
+          check result, 7
+          done()
+
+      it 'should work with return statements in loop', (done) ->
+        g = seem ->
+          for a in [1,2,3,4]
+            yield 5
+            if a > 5
+              return 6
+            if a is 3
+              return 7
+            yield 4
+          return 42
+
+        g().then (result) ->
+          check result, 7
+          done()
+
     describe 'The library', ->
       seem = require '..'
       it 'should allow alternate Promise', (done) ->
